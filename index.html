@@ -1,0 +1,57 @@
+<html>
+<head>
+<style>
+#rr{
+background:red;
+color:white;
+text-align:center;
+font-size:30px;
+}
+#yy{
+background:red;
+color:white;
+text-align:center;
+font-size:30px;
+}
+</style>
+</head>
+<body>
+<div id="rr">0</div>
+<div id="yy">0</div>
+<button id="ee">start</button>
+<button id="aa">stop</button>
+<button id="ss">reset</button>
+<script>
+var x=0,m,s,a=0,b=0,p;
+m=document.getElementById("rr");
+s=document.getElementById("yy");
+document.getElementById("ee").addEventListener("click",function(){
+if(x==0){
+p=setInterval(function(){
+a++;
+if(a==60){
+b++;
+a=0;
+}
+
+m.innerHTML=a;
+s.innerHTML=b;
+},1000);
+x=1;
+}
+});
+document.getElementById("aa").addEventListener("click",function(){
+clearInterval(p);
+x=0;
+});
+document.getElementById("ss").addEventListener("click",function(){
+clearInterval(p);
+x=0;
+m.innerHTML="0";
+s.innerHTML="0";
+a=0;
+b=0;
+});
+</script>
+</body>
+</html>
